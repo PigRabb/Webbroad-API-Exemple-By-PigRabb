@@ -23,7 +23,7 @@ class UserPost(models.Model) :
     post_id = models.AutoField(primary_key=True)
     user_id = models.IntegerField()
     title = models.CharField(max_length=128)
-    content = models.CharField(max_length=1024)
+    content = models.CharField(max_length=63206)
     time_stamp = models.IntegerField()
 
     def __repr__(self) :
@@ -37,7 +37,7 @@ class UserComment(models.Model) :
     comment_id =  models.AutoField(primary_key=True)
     user_id = models.IntegerField()
     post_id = models.IntegerField()
-    content = models.CharField(max_length=512)
+    content = models.CharField(max_length=8000)
     time_stamp = models.IntegerField()
 
     def __repr__(self) :

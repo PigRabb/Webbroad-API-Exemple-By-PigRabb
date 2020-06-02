@@ -1,6 +1,8 @@
 # Webbroad API Exemple
 
-## Data Schema 
+## Data Schema (Download .sql  [Link](https://drive.google.com/file/d/1_vStww4XH9TFJxzJxdrBzEE1l4HRGhCu/view?usp=sharing))
+
+
 
 - **User**
 
@@ -16,26 +18,26 @@
 
 > **status : 0 = user  banned , 1 = user is not  verify email  , 2 = normal user
 
-- **Post **
+- **Post**
 
 | Name  |  Data Type | Description  |
 | ------------ | ------------ | ------------ |
 | **post_id**  | INT(11)  |  PK,NN,AI |
 | user_id  | INT(11)  |  NN |
 | title  |  VARCHAR(128) | NN  |
-| content  | VARCHAR(1024)  |NN   |
+| content  | VARCHAR(63206)  |NN   |
 |time_stamp   | INT(11)  | NN  |
 
 > **time_stamp use Unix Time
 
-- **Comment **
+- **Comment**
 
 | Name  |  Data Type | Description  |
 | ------------ | ------------ | ------------ |
 | **comment_id**  | INT(11)  |  PK,NN,AI |
 | post_id  | INT(11)  |  PK,NN,AI |
 | user_id  | INT(11)  |  NN |
-| content  | VARCHAR(512)  |NN   |
+| content  | VARCHAR(8000)  |NN   |
 |time_stamp   | INT(11)  | NN,UQ  |
 
 > **time_stamp use Unix Time
