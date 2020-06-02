@@ -56,7 +56,7 @@ def getALLlistPostWithUserId(data):
         HttpResponse(status=status.HTTP_400_BAD_REQUEST)
      
 def getPostAll() :
-    serializer = PostSerializer(UserPost.objects.all().order_by('-time_stamp')[:10], many=True)
+    serializer = PostSerializer(UserPost.objects.all().order_by('-time_stamp')[:20], many=True)
     return json.dumps(serializer.data)
 
 def getPostAllWithParameter(data) :

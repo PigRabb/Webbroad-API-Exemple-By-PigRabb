@@ -12,9 +12,6 @@ from .funtion.map import getQueryTodict,checkKey
 from django.http import JsonResponse
 
 
-
-
-
 @csrf_exempt
 def CreatePost(request) :
     if request.method == 'POST' :
@@ -22,7 +19,6 @@ def CreatePost(request) :
         user = authentication(request.META.get('HTTP_AUTHORIZATION'))
         if user:
             if user.status == 2 :
-                print(user)
                 data = json.loads(request.body)
                 data["user_id"] = user.user_id
                 data["time_stamp"] = int(time())
@@ -102,7 +98,6 @@ def ListPostWithPostId(request) :
                     return getlistPostWithPostId(int(query["id"]))
                 else :
                     return HttpResponse(status=status.HTTP_400_BAD_REQUEST)
-                  
             else :
                 return HttpResponse(status=status.HTTP_403_FORBIDDEN)
         else :
@@ -143,7 +138,7 @@ def ListALLPost(request) :
                 if len(query) > 0 :
                     return getPostAllWithParameter(query)
                 else :
-                    return JsonResponse(data=getPostAll() ,safe=False,status=202 )
+                    return JsonResponse(data=getPostAll() ,safe=False,status=status.HTTP_200_OK )
             else :
                 return HttpResponse(status=status.HTTP_403_FORBIDDEN)
         else :
@@ -191,7 +186,6 @@ def ListComment(request) :
                 return HttpResponse(status=status.HTTP_403_FORBIDDEN)
         else :
             return HttpResponse(status=status.HTTP_401_UNAUTHORIZED)
-
     else :
         return HttpResponse(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
