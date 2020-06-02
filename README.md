@@ -2,6 +2,8 @@
 
 ## Data Schema 
 
+Download .sql  [Link](https://drive.google.com/file/d/1_vStww4XH9TFJxzJxdrBzEE1l4HRGhCu/view?usp=sharing)
+
 - **User**
 
 | Name  |  Data Type | Description  |
